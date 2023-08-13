@@ -81,32 +81,36 @@ n, err := fmt.Scanf("%d %d\n", &a, &b)
 package main
 
 import (
-"bufio"
-"fmt"
-"os"
+  "bufio"
+  "fmt"
+  "os"
 )
 
 func main() {
 
-stdin := bufio.NewReader(os.Stdin) //표준입력스트림을 읽는 객체
+  stdin := bufio.NewReader(os.Stdin) //표준입력스트림을 읽는 객체
 
-var a int
-var b int
-n, err := fmt.Scanln(&a, &b)
+  var a int
+  var b int
+  n, err := fmt.Scanln(&a, &b)
 
-if err != nil {
-fmt.Println(err)
-readString, err := stdin.ReadString('\n')//` \n가 나올때까지 표준입력스트림을 읽는다.
-} else {
-fmt.Println(n, a, b)
-}
-n, err = fmt.Scanln(&a, &b)
-if err != nil {
-fmt.Println(err)
-} else {
-fmt.Println(n, a, b)
-}
+  if err != nil {
+    fmt.Println(err)
 
+    readString, err := stdin.ReadString('\n')//` \n가 나올때까지 표준입력스트림을 읽는다.
+
+  } else {
+    fmt.Println(n, a, b)
+  }
+
+  n, err = fmt.Scanln(&a, &b)
+
+  if err != nil {
+    fmt.Println(err)
+  } else {
+    fmt.Println(n, a, b)
+  }
+  
 }
 ```
 
